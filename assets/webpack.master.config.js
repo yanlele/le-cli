@@ -16,10 +16,9 @@ var projectJson = require('./package.json');
 var excludeFromStats = [
     /node_modules[\\\/]/
 ];
-const genEntries = require('./webapckUtils');
 
 
-function webpackConfig(options) {
+function makeConf(options) {
     options = options || {};
 
     var debug = options.debug !== undefined ? options.debug : true;//是否是debug模式
@@ -118,17 +117,12 @@ function webpackConfig(options) {
     pages.forEach(function (filename) {
         var name = filename.match(/(.+)\.html$/);
         if (name) {
-            var fileContent = fs.readFileSnyc(path.resolve(srcDir, filename), 'utf-8');
+            var fileContent = fs.readFileSync(path.resolve(srcDir, filename), 'utf-8');
             var injectReg = /\<meta\s[^\<\>]*name=\"no-need-script\"[^\<\>]*\>/;
             var inject = injectReg.test(fileContent) ? false : 'body';
-            var title = (/<title>[^<>]*<\/title>/i).exec('fileContent')[0];
+            var title = (/<title>[^<>]*<\/title>/i).exec(fileContent)[0];
             title = title.replace(/<\/?title>/g, '');
             links.push('<li><a href="' + config.output.publicPath + name[0] + '">' + title + '-' + filename + '</a></li>');
-
-            if (m[1] in config.entry) {
-                conf.inject = inject;
-                conf.chunks = ['common', m[1]];
-            }
 
             var conf = {};
 
@@ -139,7 +133,7 @@ function webpackConfig(options) {
 
             config.plugins.push(new HtmlWebpackPlugin(conf));
 
-            var jsPath = paht.resolve(srcDir, 'scripts', filename.replace('.html', '.js'));
+            var jsPath = path.resolve(srcDir, 'scripts', filename.replace('.html', '.js'));
 
             if (!injectReg.test(fileContent) && !fs.existsSync(jsPath)) {
                 var fd = fs.openSync(jsPath, 'a');
@@ -185,4 +179,21 @@ function webpackConfig(options) {
     })
 }
 
-module.exports=webpackConfig
+function genEntries() {
+    var jsDir = path.resolve(srcDir, 'scripts');
+    var names = fs.readdirSync(jsDir);
+    var map = {};
+
+    names.forEach(function(name) {
+        var m = name.match(/(.+)\.js$/);
+        var entry = m ? m[1] : '';
+        var entryPath = entry ? path.resolve(jsDir, name) : '';
+
+        if(entry) map[entry] = entryPath;
+    });
+
+    return map;
+}
+
+
+module.exports=makeConf
