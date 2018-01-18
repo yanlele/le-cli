@@ -17,12 +17,3 @@
 
 `npm run build`
 
-#### 项目地址
-[github： https://github.com/SupaFan/webpack-dev ](https://github.com/SupaFan/webpack-dev)
-
-#### 知识点
-* webpack js 编译 css压缩合并 html压缩 模块热替换
-* nodejs 增删目录 增加文件
-* postcss
-* fetch
-* es6
