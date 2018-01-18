@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <title>
+    404
+  </title>
+  <script src="<%= htmlWebpackPlugin.files.chunks.common.entry %>"></script>
+  <script src="<%= htmlWebpackPlugin.files.chunks.main.entry %>"></script>
+</head>
+
+<body>
+  <div class="wrapper" style="display:none">
+    404
+  </div>
+ <script src="<%= `${htmlWebpackPlugin.files.chunks[htmlWebpackPlugin.options.entryName].entry}` %>"></script>
+</body>
+
+</html>
