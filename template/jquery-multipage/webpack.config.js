@@ -124,6 +124,10 @@ module.exports = env => {
                     },
                     exclude: '/node_modules/',
                     include: '/src/',
+                },
+                {
+                    test: /\.hbs/,
+                    loader: "handlebars-template-loader"
                 }
             ]
         }
