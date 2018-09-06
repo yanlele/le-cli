@@ -21,7 +21,7 @@ const pages = fs.readdirSync(templateRoot);
 pages.forEach((name, index) => {
     // 页面入口配置
     const enterPath = path.join(templateRoot, name);
-    pageEntry[name] = path.join(enterPath, 'entry.js');
+    pageEntry[name] = path.join(enterPath, 'index.js');
 
     // 输出页面模板
     pageHtml.push(new HtmlWebpackPlugin({
