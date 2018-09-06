@@ -5,6 +5,8 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 // 模块映射到输出 bundle 的过程
 const ManifestPlugin = require('webpack-manifest-plugin');
 const fs = require('fs-extra');
+const glob = require('glob-all');
+const PurifyCSS = require('purifycss-webpack')
 
 const buildPath = path.resolve(__dirname, './dist');
 const templateRoot = path.resolve(__dirname, './page');
@@ -53,7 +55,6 @@ module.exports = env => {
         entry: Object.assign(pageEntry, {
             main: './common/main.js'
         }),
-        // devtool: false,
         devtool: 'source-map',
         devServer: {
             contentBase: path.resolve(__dirname, './'),
@@ -64,20 +65,10 @@ module.exports = env => {
         },
         resolve: {
             alias: {
-                jquery$: path.resolve(__dirname, 'common/lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
+                jquery$: path.resolve(__dirname, 'lib/jquery.min.js')                  // 之所以要用jquery$ ,表示这是一个文件而已；
             }
         },
-        plugins: [
-            new ManifestPlugin(),
-            new webpack.ProvidePlugin({
-                $: 'jquery'
-            }),
-            new webpack.HotModuleReplacementPlugin(), // 模块热替换
-            new webpack.optimize.CommonsChunkPlugin({ // 公共模块提取
-                name: 'common'
-            }),
-            new CleanWebpackPlugin(buildPath), // 清理 项目之外无法清理 用nodejs清理文件
-        ].concat(pageHtml),
+
         output: {
             filename: 'js/[name]-[hash].bundle.js',
             path: buildPath,
@@ -130,7 +121,24 @@ module.exports = env => {
                     loader: "handlebars-template-loader"
                 }
             ]
-        }
+        },
+        plugins: [
+            new ManifestPlugin(),
+            new webpack.ProvidePlugin({
+                $: 'jquery'
+            }),
+            new webpack.HotModuleReplacementPlugin(), // 模块热替换
+            new webpack.optimize.CommonsChunkPlugin({ // 公共模块提取
+                name: 'common'
+            }),
+            new CleanWebpackPlugin(buildPath), // 清理 项目之外无法清理 用nodejs清理文件
+            new PurifyCSS({
+                paths: glob.sync([
+                    path.join(__dirname, '.page/**/*.html'),
+                    path.join(__dirname, './page/**/*.js')
+                ]),
+            })
+        ].concat(pageHtml),
     }
 };
 
