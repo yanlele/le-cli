@@ -4,7 +4,7 @@ const views = require('koa-views')
 const json = require('koa-json')
 const onerror = require('koa-onerror')
 const bodyparser = require('koa-bodyparser')
-const logger = require('koa-logger')
+const logger = require('koa-logs-middleware')
 const session = require('koa-session-minimal')
 const MysqlStore = require('koa-mysql-session')
 const config = require('./config')
@@ -33,8 +33,14 @@ app.use(session({
 app.use(bodyparser({
     enableTypes: ['json', 'form', 'text']
 }))
-app.use(json())
-app.use(logger())
+app.use(json());
+
+// 加载日志
+app.use(logger({
+    defaultPath: path.resolve(__dirname, 'logs'),
+    applicationName: 'app'
+}));
+
 app.use(require('koa-static')(__dirname + '/views'))
 
 app.use(views(__dirname + '/views', {

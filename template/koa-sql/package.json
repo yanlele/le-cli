@@ -16,7 +16,7 @@
     "koa-convert": "^1.2.0",
     "koa-generic-session": "^2.0.1",
     "koa-json": "^2.0.2",
-    "koa-logger": "^2.0.1",
+    "koa-logs-middleware": "^0.1.0",
     "koa-mysql-session": "^0.0.2",
     "koa-onerror": "^1.2.1",
     "koa-router": "^7.1.1",
