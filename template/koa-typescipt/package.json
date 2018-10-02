@@ -1,0 +1,46 @@
+{
+  "name": "koa-typescipt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/istanbul": "^0.4.30",
+    "@types/koa": "^2.0.46",
+    "@types/koa-bodyparser": "^3.0.20",
+    "@types/koa-router": "^7.0.21",
+    "@types/node": "^10.11.3",
+    "@types/supertest": "^2.0.6",
+    "debug": "^2.6.3",
+    "ejs": "^2.5.7",
+    "glob": "^7.1.3",
+    "koa": "^2.2.0",
+    "koa-bodyparser": "^3.2.0",
+    "koa-convert": "^1.2.0",
+    "koa-generic-session": "^2.0.1",
+    "koa-json": "^2.0.2",
+    "koa-json-logger": "^1.0.2",
+    "koa-logs-middleware": "^0.1.0",
+    "koa-onerror": "^1.2.1",
+    "koa-redis": "^3.1.2",
+    "koa-router": "^7.1.1",
+    "koa-static": "^3.0.0",
+    "koa-views": "^5.2.1",
+    "mysql": "^2.16.0",
+    "pino-http": "^4.0.0",
+    "react-motion": "^0.5.2",
+    "validator": "^9.2.0"
+  },
+  "devDependencies": {
+    "@types/chai": "^4.1.2",
+    "@types/mocha": "^2.2.48",
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "supertest": "^3.3.0"
+  }
+}
