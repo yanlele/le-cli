@@ -4,8 +4,8 @@
     "target": "es5",
     "noImplicitAny": false,     //在表达式和声明上有隐含的any类型时报错
     "typeRoots": [
-      "./node_modules/@type",
-      "./typings/modules"
+      "node_modules/@type",
+      "typings/modules"
     ],
     "allowJs": true,
     "moduleResolution": "node",
@@ -18,10 +18,10 @@
     "lib": ["es6", "dom", "es7"]
   },
   "include": [
-    "./src/**/*"
+    "app/**/*"
   ],
   "exclude": [
-    "./node_modules",
-    "./test"
+    "node_modules",
+    "test"
   ]
 }
