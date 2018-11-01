@@ -1,7 +1,7 @@
 {
   "name": "le-cli",
   "version": "0.0.1",
-  "description": "前端项目架构实践",
+  "description": "前端项目构建实践",
   "main": "./bin/le.js",
   "directories": {
     "lib": "lib"
@@ -11,8 +11,6 @@
   },
   "dependencies": {
     "chalk": "^2.1.0",
-    "commander": "^2.11.0",
-    "directory-copy": "^0.1.0",
     "fs-extra": "^4.0.2",
     "inquirer": "^6.2.0"
   },
@@ -27,6 +25,13 @@
     "optimize-css-assets-webpack-plugin": "^3.2.0",
     "uglifyjs-webpack-plugin": "^1.1.1",
     "webpack": "^3.8.1",
+    "commander": "^2.11.0",
+    "directory-copy": "^0.1.0",
     "webpack-dev-server": "^2.9.5"
-  }
+  },
+  "keywords": [
+    "cli",
+    "项目构建",
+    "构建工具"
+  ]
 }
