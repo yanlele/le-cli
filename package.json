@@ -13,7 +13,8 @@
     "chalk": "^2.1.0",
     "commander": "^2.11.0",
     "directory-copy": "^0.1.0",
-    "fs-extra": "^4.0.2"
+    "fs-extra": "^4.0.2",
+    "inquirer": "^6.2.0"
   },
   "bin": {
     "le": "./bin/le"
