@@ -1,5 +1,41 @@
 #!/usr/bin/env node
 
-'use strict'
+const inquirer = require('inquirer');
 
-require('../lib/le')();
+inquirer
+    .prompt([
+        {
+            type: 'checkbox',
+            message: '请选择',
+            name: 'select',
+            choices: [
+                new inquirer.Separator(' = 前台程序 = '),
+                {
+                    name: '多页jquery程序+handlebars模板引擎',
+                    value: 'jquery-m'
+                },
+                new inquirer.Separator(' = node 后台程序 ='),
+                {
+                    name: 'koa程序+MySql连接数据库',
+                    value: 'koa-sql'
+                },
+                {
+                    name: 'koa程序+基于TypeScript+MySql',
+                    value: 'koa-typescript'
+                },
+                new inquirer.Separator(' = java 后台程序 = '),
+                {
+                    name: '基础java SSM程序',
+                    value: 'java-ssm'
+                }
+            ],
+            validate: function (answer) {
+                if (answer.length !== 1) {
+                    return '只能选择一个初始化项目模板';
+                }
+                return true;
+            }
+        }
+    ]).then(data => {
+    console.log(JSON.stringify(data, null, '  '));
+});

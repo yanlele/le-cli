@@ -5,4 +5,4 @@ module.exports = {
     'cssnano': {},
     'postcss-adaptive': { remUnit: 75, autoRem: true }
   }
-}
+};
