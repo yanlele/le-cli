@@ -41,8 +41,6 @@ inquirer
     ]).then(data => {
     log.info('项目选择成功，正在开始给您初始化项目.......');
     let template = data.select[0];
-    console.log(template);
-
     init({
         template
     })
