@@ -1,6 +1,8 @@
 #!/usr/bin/env node
 
 const inquirer = require('inquirer');
+const log = require('../lib/log');
+const init = require('../lib/console/init');
 
 inquirer
     .prompt([
@@ -12,7 +14,7 @@ inquirer
                 new inquirer.Separator(' = 前台程序 = '),
                 {
                     name: '多页jquery程序+handlebars模板引擎',
-                    value: 'jquery-m'
+                    value: 'jquery-multipage'
                 },
                 new inquirer.Separator(' = node 后台程序 ='),
                 {
@@ -37,5 +39,11 @@ inquirer
             }
         }
     ]).then(data => {
-    console.log(JSON.stringify(data, null, '  '));
+    log.info('项目选择成功，正在开始给您初始化项目.......');
+    let template = data.select[0];
+    console.log(template);
+
+    init({
+        template
+    })
 });
