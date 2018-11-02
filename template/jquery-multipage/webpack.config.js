@@ -2,11 +2,12 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+
 // 模块映射到输出 bundle 的过程
 const ManifestPlugin = require('webpack-manifest-plugin');
 const fs = require('fs-extra');
 const glob = require('glob-all');
-const PurifyCSS = require('purifycss-webpack')
+const PurifyCSS = require('purifycss-webpack');
 
 const buildPath = path.resolve(__dirname, './dist');
 const templateRoot = path.resolve(__dirname, './page');
@@ -27,15 +28,15 @@ pages.forEach((name, index) => {
 
     // 输出页面模板
     pageHtml.push(new HtmlWebpackPlugin({
-        entryName: name,
-        filename: `${name}.html`,
-        template: `${enterPath}/index.html`,
-        inject: true,
+        entryName: name,                                    //
+        filename: `${name}.html`,                           // 输出文件名
+        template: `${enterPath}/index.html`,                // 模板文件名
+        inject: true,                                       // 自动插入
         minify: {
-            removeComments: true,
-            collapseWhitespace: true
+            removeComments: true,                           // 取消注解
+            collapseWhitespace: true                        // 压缩空格
         },
-        chunks: ['main', 'common', name]
+        chunks: ['main', 'common', name]                    // 公共chunks
     }));
 
     // 输出导航JSON
