@@ -16,6 +16,10 @@ inquirer
                     name: '多页jquery程序+handlebars模板引擎',
                     value: 'jquery-multipage'
                 },
+                {
+                    name: '基于TypeScript+webpack多页打包的前台程序',
+                    value: 'TypeScript-multipage'
+                },
                 new inquirer.Separator(' = node 后台程序 ='),
                 {
                     name: 'koa程序+MySql连接数据库',

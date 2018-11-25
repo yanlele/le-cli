@@ -1,6 +1,6 @@
 {
-  "name": "typescript-build-index",
-  "version": "1.0.0",
+  "name": "typscript-init",
+  "version": "0.0.1",
   "description": "构建TypeScript-webpack 前端程序常用示例项目",
   "main": "index.js",
   "scripts": {
