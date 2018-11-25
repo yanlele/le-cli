@@ -146,11 +146,9 @@ const baseConfig = {
     },
 
     plugins: [
-        new webpack.optimize.UglifyJsPlugin(),
-
         new ExtractTextWebpackPlugin({
             filename: 'css/[name].[hash].css',                   // 输出路径
-            allChunks: true
+            allChunks: false
         }),
 
         new CleanWebpack(path.resolve(__dirname, 'dist')),
@@ -158,7 +156,9 @@ const baseConfig = {
         new webpack.optimize.CommonsChunkPlugin({               // 提取三方生成的代码, 包括模块代码
             names: [ 'common'],
             minChunks: Infinity
-        })
+        }),
+
+        new webpack.optimize.UglifyJsPlugin(),
     ]
 };
 
@@ -180,13 +180,7 @@ const generatePage = function ({
                 minify: {
                     collapseWhitespace: false                //祛除空格
                 }
-            }),
-
-            new PurifyCSS({
-                paths: glob.sync([
-                    path.join(template)
-                ]),
-            }),
+            })
         ]
     }
 };
@@ -195,6 +189,7 @@ const appPaths = fse.readdirSync(path.resolve(__dirname, 'app', 'pages'));
 let appItemPath = '';
 let myPages = [];
 let appItemHtmlTemplate = '';
+let purifyCSSList = [];                         // tree shaking css list;
 appPaths.map(function (item) {
     appItemPath = path.resolve(__dirname, 'app', 'pages', item, 'index.ts');
     appItemHtmlTemplate = path.resolve(__dirname, 'app', 'pages', item, 'index.html');
@@ -207,8 +202,17 @@ appPaths.map(function (item) {
             name: item,
             chunks: ['common', item],
             template: fse.pathExistsSync(appItemHtmlTemplate) ? path.resolve(__dirname, 'app', 'pages', item, 'index.html') : './app/index.html',
-        }))
+        }));
+        purifyCSSList.push(path.resolve(__dirname, 'app', 'pages', item, 'index.html'));
     }
 });
+
+if (purifyCSSList.length >= 1) {
+    baseConfig.plugins.push(
+        new PurifyCSS({
+            paths: glob.sync(purifyCSSList),
+        })
+    )
+}
 
 module.exports = merge([baseConfig].concat(myPages));

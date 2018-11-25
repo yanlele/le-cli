@@ -199,13 +199,7 @@ const generatePage = function ({
                 minify: {
                     collapseWhitespace: false                //祛除空格
                 }
-            }),
-
-            new PurifyCSS({
-                paths: glob.sync([
-                    path.join(template)
-                ]),
-            }),
+            })
         ]
     }
 };
