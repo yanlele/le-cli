@@ -12,3 +12,13 @@
 ![01](./static/img/01.png)
 
 
+## 已添加的项目初始化
+- 多页jquery程序+handlebars模板引擎
+- 基于TypeScript+webpack多页打包的前台程序
+- react+redux+antd+jsonServerMockjs
+- koa程序+MySql连接数据库
+- koa程序+基于TypeScript+MySql
+
+
+
+

@@ -20,6 +20,10 @@ inquirer
                     name: '基于TypeScript+webpack多页打包的前台程序',
                     value: 'TypeScript-multipage'
                 },
+                {
+                    name: 'react+redux+antd+jsonServerMockjs',
+                    value: 'react-redux'
+                },
                 new inquirer.Separator(' = node 后台程序 ='),
                 {
                     name: 'koa程序+MySql连接数据库',
@@ -28,10 +32,6 @@ inquirer
                 {
                     name: 'koa程序+基于TypeScript+MySql',
                     value: 'koa-typescript'
-                },
-                {
-                    name: 'react+redux+antd+jsonServerMockjs',
-                    value: 'react-redux'
                 },
                 new inquirer.Separator(' = java 后台程序 = '),
                 {
