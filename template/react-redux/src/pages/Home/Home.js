@@ -5,12 +5,14 @@
 
 import React, {Component} from 'react';
 import Nav from '../../components/Nav/Nav';
+import {Button} from 'antd';
 
 
 class Home extends Component {
     constructor(props) {
         super(props);
         this.handleClick = this.handleClick.bind(this);
+        this.handleDown = this.handleDown.bind(this);
         this.state = {
             count: 0
         }
@@ -23,7 +25,8 @@ class Home extends Component {
                 <hr/>
                 this is home  ~~~~~<br/>
                 当前计数： {this.state.count} <br/>
-                <button onClick={this.handleClick}>自增</button>
+                <Button type="primary" onClick={this.handleClick}>自增</Button>
+                <Button type="danger" onClick={this.handleDown}>自减</Button>
             </div>
         )
     }
@@ -32,6 +35,12 @@ class Home extends Component {
         this.setState({
             count: ++this.state.count
         });
+    }
+
+    handleDown() {
+        this.setState({
+            count: --this.state.count
+        })
     }
 }
 

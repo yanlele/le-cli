@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/yanlele/build-react-index#readme",
   "dependencies": {
+    "babel-plugin-import": "^1.11.0",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",
     "react-redux": "^6.0.0",
