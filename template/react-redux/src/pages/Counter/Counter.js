@@ -7,7 +7,7 @@ import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {increment, decrement, reset} from '../../redux/actions/counter';
 
-const mapStateToProps = (state)=> {
+const mapStateToProps = (state) => {
     return {
         counter: state.counter
     }
@@ -27,6 +27,7 @@ const mapDispatchToProps = (dispatch) => {
     }
 };
 
+@connect(mapStateToProps, mapDispatchToProps)
 class Counter extends Component {
     constructor(props) {
         super(props);
@@ -38,12 +39,14 @@ class Counter extends Component {
             <div>
                 <p>当前技术为store 里面的计数: {this.props.counter.count}</p>
                 <button onClick={this.handleAdd}>增加</button>
-                <button onClick={()=> {
+                <button onClick={() => {
                     this.props.decrement();
-                }}>减少</button>
-                <button onClick={()=> {
+                }}>减少
+                </button>
+                <button onClick={() => {
                     this.props.reset();
-                }}>清空</button>
+                }}>清空
+                </button>
             </div>
         )
     }
@@ -55,4 +58,4 @@ class Counter extends Component {
     }
 }
 
-export default connect(mapStateToProps)(Counter);
+export default Counter;
