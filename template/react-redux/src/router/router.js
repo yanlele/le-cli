@@ -12,6 +12,7 @@ import Home from 'bundle-loader?lazy&name=home!pages/Home/Home';
 import Page1 from 'bundle-loader?lazy&name=page1!pages/Page1/Page1';
 import Counter from 'bundle-loader?lazy&name=counter!../pages/Counter/Counter';
 import UserInfo from "bundle-loader?lazy&name=userInfo!../pages/UserInfo/UserInfo";
+import HOComponent from "bundle-loader?lazy&name=HOComponent!../pages/HOComponent/HOComponent"
 
 const Loading = function () {
     return <div>Loading...</div>
@@ -34,6 +35,7 @@ const getRouter = () => (
                 <Route path='/page1' component={createComponent(Page1)}/>
                 <Route path='/counter' component={createComponent(Counter)}/>
                 <Route path='/userinfo' component={createComponent(UserInfo)}/>
+                <Route path='/ho-component' component={createComponent(HOComponent)}/>
             </Switch>
         </div>
     </Router>
