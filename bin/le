@@ -6,7 +6,7 @@ const init = require('../lib/console/init');
 const program = require('commander');
 
 program
-    .usage('le start')
+    .usage('start')
     .version('0.0.1')
     .option('-s, --start', '开启cli模板选择')
     .parse(process.argv);
