@@ -12,7 +12,7 @@
 ![01](./static/img/01.png)
 
 
-## 已添加的项目初始化
+## 已添加的项目构建
 - 多页jquery程序+handlebars模板引擎
 - 基于TypeScript+webpack多页打包的前台程序
 - react+redux+antd+jsonServerMockjs
