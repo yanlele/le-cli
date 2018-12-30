@@ -4,17 +4,18 @@ const inquirer = require('inquirer');
 const log = require('../lib/log');
 const init = require('../lib/console/init');
 const program = require('commander');
+const pkg = require('../package.json');
 
 program
-    .usage('start')
-    .version('0.0.1')
+    .usage('--start')
+    .version(pkg.version)
     .option('-s, --start', '开启cli模板选择')
     .parse(process.argv);
 
 program.on('--help', function () {
     console.log('  示例(Examples):');
     console.log();
-    console.log('    le start');
+    console.log('    le --start/-s');
 });
 
 let config = [
