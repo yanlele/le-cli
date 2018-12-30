@@ -36,6 +36,10 @@ let config = [
                 name: 'react+redux+antd+jsonServerMockjs',
                 value: 'react-redux'
             },
+            {
+                name: 'react+redux+antd+next服务端渲染',
+                value: 'next-react-redux'
+            },
             new inquirer.Separator(' = node 后台程序 ='),
             {
                 name: 'koa程序+MySql连接数据库',
