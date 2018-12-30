@@ -1,0 +1,34 @@
+{
+  "name": "next-react-learning",
+  "version": "1.0.0",
+  "description": "next服务端渲染react学习",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yanlele/next-react-learning.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yanlele/next-react-learning/issues"
+  },
+  "homepage": "https://github.com/yanlele/next-react-learning#readme",
+  "dependencies": {
+    "@zeit/next-less": "^1.0.1",
+    "antd": "3.11.6",
+    "less": "^3.9.0",
+    "next": "^7.0.2",
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0",
+    "react-redux": "^5.0.1",
+    "redux": "^3.6.0",
+    "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.1.0"
+  },
+  "devDependencies": {}
+}
