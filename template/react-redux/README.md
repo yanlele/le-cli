@@ -143,7 +143,7 @@ react-redux提供了一个方法 **connect**。
 
 connect接收两个参数，一个mapStateToProps,就是把redux的state，转为组件的Props，还有一个参数是mapDispatchToprops,
 就是把发射actions的方法，转为Props属性函数。
-```js
+```jsx harmony
 import React, {Component} from 'react';
 import {increment, decrement, reset} from 'actions/counter';
 
@@ -236,7 +236,7 @@ export function getUserInfo() {
 我们之前知道reducer能处理的action只有这样的{type:xxx}，所以我们使用中间件来处理
 函数形式的action，把他们转为标准的action给reducer。这是redux-thunk的作用。                            
 其中mapDispatchToProps可以使用react-redux提供的简单写法。
-```js
+```jsx harmony
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {getUserInfo} from "actions/userInfo";
