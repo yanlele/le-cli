@@ -10,4 +10,13 @@ require('./index.less');
 
 console.log(123);
 let main = new Main();
-main.run()
+main.run();
+
+let helloTemplate = require('../../components/template/hello.hbs');
+let helloTemplateComponent = helloTemplate({
+    name: 'yanle',
+    a: 1,
+    b: 2
+});
+
+document.getElementById('container').innerHTML = helloTemplateComponent;

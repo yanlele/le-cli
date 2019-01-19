@@ -33,6 +33,8 @@
     "file-loader": "^2.0.0",
     "fs-extra": "^7.0.1",
     "glob-all": "^3.1.0",
+    "handlebars": "^4.0.12",
+    "handlebars-template-loader": "^1.0.0",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "img-loader": "^3.0.1",
