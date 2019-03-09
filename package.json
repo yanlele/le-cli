@@ -1,6 +1,6 @@
 {
   "name": "le-cli",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "前端项目构建实践",
   "main": "./bin/le.js",
   "directories": {
