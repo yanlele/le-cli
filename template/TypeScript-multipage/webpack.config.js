@@ -141,6 +141,10 @@ const baseConfig = {
                         }
                     }
                 ]
+            },
+            {
+                test: /\.hbs/,
+                loader: "handlebars-template-loader"
             }
         ]
     },
