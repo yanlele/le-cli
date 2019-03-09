@@ -41,6 +41,10 @@ let config = [
                 name: 'react+redux+antd+next服务端渲染',
                 value: 'next-react-redux'
             },
+            {
+                name: '基于TypeScript+react项目',
+                value: 'tsx-app'
+            },
             new inquirer.Separator(' = node 后台程序 ='),
             {
                 name: 'koa程序+MySql连接数据库',
