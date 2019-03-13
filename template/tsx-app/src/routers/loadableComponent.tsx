@@ -1,6 +1,6 @@
-import * as React from 'react';
-// import Loadable from 'react-loadable'
-const Loadable = require('react-loadable');
+import React from 'react';
+import Loadable from 'react-loadable';
+// const Loadable = require('react-loadable');
 const Loading = (props: {error: any}) => {
   const { error } = props;
   if (error) {
