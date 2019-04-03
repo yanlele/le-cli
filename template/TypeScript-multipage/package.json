@@ -7,7 +7,7 @@
     "build": "webpack",
     "dev": "webpack -w --config webpack.config.dev.js",
     "test": "webpack --config webpack.config.test.js",
-    "server": "webpack-dev-server"
+    "server": "live-server dist"
   },
   "repository": {
     "type": "git",
@@ -40,6 +40,7 @@
     "img-loader": "^3.0.1",
     "less": "^3.8.1",
     "less-loader": "^4.1.0",
+    "live-server": "^1.2.1",
     "mini-css-extract-plugin": "^0.4.5",
     "postcss": "^7.0.6",
     "postcss-loader": "^3.0.0",

@@ -19,8 +19,11 @@
 - react+redux+antd+next服务端渲染
 - koa程序+MySql连接数据库
 - koa程序+基于TypeScript+MySql
-
+- 基于TypeScript+react+saga项目
 
 ## 版本升级说明
+- 0.0.10
+    添加了 基于TypeScript+react+saga项目
+
 - 0.0.8                                                                 
     添加基于next 的react 服务端渲染项目模板。 内置redux+antd， 作为前台程序使用。
