@@ -6,9 +6,9 @@
 `npm install le-cli -g`
 
 ## 使用
-直接cd 到自己的文件目录，自己创建一个文件夹：
-然后直接运行命令 `le -s` 就可以了:
-
+直接cd 到自己的文件目录（需要自己创建一个文件夹， 程序在这里不会给你创建文件夹的）：
+没有动图， 参考下面的命令行执行流程：
+`mkdir test` --> `cd test` --> `le -s`                      
 ![01](./static/img/01.png)
 
 
@@ -23,7 +23,9 @@
 
 ## 版本升级说明
 - 0.0.10
-    添加了 基于TypeScript+react+saga项目
+    - 添加了 基于TypeScript+react+saga项目
+    - TypeScript-multipage 项目添加了 live-server 启动项目
+    - TypeScript-multipage 添加了handlebars-loader
 
 - 0.0.8                                                                 
     添加基于next 的react 服务端渲染项目模板。 内置redux+antd， 作为前台程序使用。
