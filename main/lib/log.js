@@ -14,7 +14,7 @@ var LogType;
 var logTypeList = [
     {
         'type': LogType.info,
-        'color': 'blue',
+        'color': 'cyan',
         'icon': '>'
     },
     {

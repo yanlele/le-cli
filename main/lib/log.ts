@@ -29,7 +29,7 @@ interface LogMapFunction {
 const logTypeList: LogTypeItem[] = [
   {
     'type': LogType.info,
-    'color': 'blue',
+    'color': 'cyan',
     'icon': '>'
   },
   {
