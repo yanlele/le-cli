@@ -17,5 +17,4 @@ package-lock.json
 yarn.lock
 
 dist/
-main/**/*.js
 test/**/*.js
