@@ -7,7 +7,6 @@
     "lib": "lib"
   },
   "scripts": {
-    "prepublish": "npm run build",
     "prepare": "npm run build",
     "type-check": "tsc",
     "commit": "git-cz",
