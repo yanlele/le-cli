@@ -18,7 +18,7 @@
     "typescript": "^3.4.5"
   },
   "bin": {
-    "tpm": "./bin/le"
+    "tpm": "./bin/le.js"
   },
   "config": {
     "commitizen": {
@@ -28,6 +28,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "@types/fs-extra": "^5.0.5",
     "@types/node": "^11.13.8",
     "commitizen": "^3.0.7",
     "cz-conventional-changelog": "^2.1.0"

@@ -1,24 +1,22 @@
 #!/usr/bin/env node
-
-const inquirer = require('inquirer');
-const log = require('../lib/log');
-const init = require('../lib/console/init');
-const program = require('commander');
-const pkg = require('../package.json');
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var inquirer = require("inquirer");
+var log_1 = require("../lib/log");
+var init_1 = require("../lib/console/init");
+var program = require("commander");
+var pkg = require('../package.json');
 program
     .usage('--start')
     .version(pkg.version)
     .option('-s, --start', '开启cli模板选择')
     .parse(process.argv);
-
 program.on('--help', function () {
-    console.log('  示例(Examples):');
-    console.log();
-    console.log('    le --start/-s');
+    log_1.default.info('  示例(Examples):');
+    log_1.default.info();
+    log_1.default.info('  le  --start/-s');
 });
-
-let config = [
+var config = [
     {
         type: 'checkbox',
         message: '请选择',
@@ -68,20 +66,17 @@ let config = [
         }
     }
 ];
-
 if (program.start) {
     inquirer.prompt(config)
-        .then(data => {
-            log.info('项目选择成功，正在开始给您初始化项目.......');
-            let template = data.select[0];
-            init({
-                template
-            })
+        .then(function (data) {
+        log_1.default.info('项目选择成功，正在开始给您初始化项目.......');
+        var template = data.select[0];
+        init_1.default({
+            template: template
         });
-} else {
+    });
+}
+else {
     program.help();
 }
-
-
-
-
+//# sourceMappingURL=le.js.map

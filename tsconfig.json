@@ -32,7 +32,8 @@
     ]
   },
   "include": [
-    "packages/**/*"
+    "packages/**/*",
+    "./typings/*.d.ts"
   ],
   "exclude": [
     "node_modules"
