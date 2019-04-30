@@ -1,6 +1,6 @@
 {
   "name": "le-cli",
-  "version": "0.1.5",
+  "version": "0.1.7",
   "description": "前端项目构建实践",
   "main": "./main/bin/le.js",
   "directories": {
@@ -21,7 +21,7 @@
     "typescript": "^3.4.5"
   },
   "bin": {
-    "le": "./main/bin/le.js"
+    "le": "./main/bin/le"
   },
   "config": {
     "commitizen": {
