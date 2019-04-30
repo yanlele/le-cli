@@ -1,6 +1,6 @@
 {
-  "name": "le-cli",
-  "version": "0.0.10",
+  "name": "tpm-cli",
+  "version": "0.1.0",
   "description": "前端项目构建实践",
   "main": "./bin/le.js",
   "directories": {
@@ -16,7 +16,7 @@
     "commander": "^2.11.0"
   },
   "bin": {
-    "le": "./bin/le"
+    "tpm": "./bin/le"
   },
   "author": "",
   "license": "ISC",
