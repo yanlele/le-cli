@@ -1,0 +1,41 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "noImplicitAny": false,
+    //在表达式和声明上有隐含的any类型时报错
+    "moduleResolution": "node",
+    "typeRoots": [
+      "node_modules/@type",
+      "typings/modules",
+      "node_modules"
+    ],
+    "allowJs": true,
+    "emitDecoratorMetadata": true,
+    //给源码里的装饰器声明加上设计类型元数据
+    "experimentalDecorators": true,
+    //启用实验性的ES装饰器
+    "importHelpers": true,
+    "removeComments": true,
+    "preserveConstEnums": true,
+    "sourceMap": true,
+    "allowSyntheticDefaultImports": true,
+    //    "outDir": "build",
+    "baseUrl": ".",
+    "lib": [
+      "es6",
+      "dom",
+      "es7"
+    ],
+    "types": [
+      "node"
+    ]
+  },
+  "include": [
+    "main/**/*",
+    "./typings/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
+}

@@ -12,6 +12,9 @@ package-lock.json
 *.ntvs*
 *.njsproj
 *.sln
+*.js.map
+
 yarn.lock
 
 dist/
+test/**/*.js
