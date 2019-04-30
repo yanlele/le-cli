@@ -8,7 +8,7 @@
   },
   "scripts": {
     "type-check": "tsc",
-    "commit": "commit"
+    "commit": "git-cz"
   },
   "dependencies": {
     "chalk": "^2.1.0",
