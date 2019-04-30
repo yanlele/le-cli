@@ -3,7 +3,7 @@ import * as fse from 'fs-extra';
 import log from '../log';
 
 export default (program) => {
-  let templatePath: string = path.resolve(__dirname, '../../template', program.template);
+  let templatePath: string = path.resolve(__dirname, '../../../template', program.template);
   // log.info(templatePath);
   fse.pathExists(templatePath).then(exists => {
     if (exists) {

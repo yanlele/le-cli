@@ -4,7 +4,7 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
-const pkg = require('../package.json');
+const pkg = require('../../package.json');
 
 program
     .usage('--start')

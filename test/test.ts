@@ -1,3 +1,3 @@
-import log from '../lib/log'
+import log from '../main/lib/log'
 
 log.info('helllo');

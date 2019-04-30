@@ -32,7 +32,7 @@
     ]
   },
   "include": [
-    "packages/**/*",
+    "main/**/*",
     "./typings/*.d.ts"
   ],
   "exclude": [
