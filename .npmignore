@@ -18,4 +18,3 @@ yarn.lock
 
 dist/
 test/**/*.js
-main/**/*.js
