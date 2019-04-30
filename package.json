@@ -1,6 +1,6 @@
 {
   "name": "le-cli",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "前端项目构建实践",
   "main": "./main/bin/le.js",
   "directories": {
@@ -8,6 +8,7 @@
   },
   "scripts": {
     "prepublish": "npm run build",
+    "prepare": "npm run build",
     "type-check": "tsc",
     "commit": "git-cz",
     "build": "tsc"
