@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "typeRoots": [
+      "/node_modules/@type",
+      "/typings/modules"
+    ],
+    "allowJs": true,
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "book/12、学习TypeScript/dist",
+    "baseUrl": "."
+  },
+  "include": [
+    "book/12、学习TypeScript/src/**/*"
+  ],
+  "exclude": [
+    "/node_modules"
+  ]
+}
