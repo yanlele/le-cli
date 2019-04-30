@@ -7,7 +7,8 @@
     "lib": "lib"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "type-check": "tsc",
+    "commit": "commit"
   },
   "dependencies": {
     "chalk": "^2.1.0",
@@ -19,9 +20,18 @@
   "bin": {
     "tpm": "./bin/le"
   },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
   "author": "",
   "license": "ISC",
-  "devDependencies": {},
+  "devDependencies": {
+    "@types/node": "^11.13.8",
+    "commitizen": "^3.0.7",
+    "cz-conventional-changelog": "^2.1.0"
+  },
   "keywords": [
     "cli",
     "项目构建",
