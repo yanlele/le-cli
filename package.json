@@ -1,5 +1,5 @@
 {
-  "name": "tpm-cli",
+  "name": "le-cli",
   "version": "0.1.1",
   "description": "前端项目构建实践",
   "main": "./bin/le.js",
