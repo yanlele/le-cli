@@ -17,3 +17,6 @@ package-lock.json
 yarn.lock
 
 dist/
+bin/**/*.js
+lib/**/*.js
+test/**/*.js
