@@ -12,13 +12,6 @@
     "commit": "git-cz",
     "build": "tsc"
   },
-  "dependencies": {
-    "chalk": "^2.1.0",
-    "commander": "^2.11.0",
-    "fs-extra": "^4.0.2",
-    "inquirer": "^6.2.0",
-    "typescript": "^3.4.5"
-  },
   "bin": {
     "le": "./main/bin/le.js"
   },
@@ -27,8 +20,16 @@
       "path": "cz-conventional-changelog"
     }
   },
-  "author": "",
+  "author": "yanle 331393627@qq.com",
   "license": "ISC",
+  "dependencies": {
+    "chalk": "^2.1.0",
+    "commander": "^2.11.0",
+    "fs-extra": "^4.0.2",
+    "inquirer": "^6.2.0",
+    "typescript": "^3.4.5",
+    "user-home": "^2.0.0"
+  },
   "devDependencies": {
     "@types/fs-extra": "^5.0.5",
     "@types/node": "^11.13.8",
