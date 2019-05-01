@@ -22,6 +22,10 @@
 - 基于TypeScript+react+saga项目
 
 ## 版本升级说明
+- 0.1.10
+    - 项目构建改造成为了 TS 构建工具
+
+
 - 0.0.10
     - 添加了 基于TypeScript+react+saga项目
     - TypeScript-multipage 项目添加了 live-server 启动项目
