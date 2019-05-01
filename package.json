@@ -28,6 +28,7 @@
     "download-git-repo": "^1.1.0",
     "fs-extra": "^4.0.2",
     "inquirer": "^6.2.0",
+    "ora": "^3.4.0",
     "typescript": "^3.4.5",
     "user-home": "^2.0.0"
   },
