@@ -8,10 +8,10 @@ import chalk from 'chalk';
 const spinner = ora('downloading template...');
 
 spinner.start();
-download('github:yanlele/le-cli', path.resolve(userHome, 'temp'), {clone: false}, (err)=> {
+download('github:cli-template-build/tsx-app', path.resolve(userHome, 'temp'), {clone: false}, (err)=> {
   if (err) {
-    spinner.fail(chalk.red('download template unsuccessfully'))
-    console.log(err)
+    spinner.fail(chalk.red('download template unsuccessfully'));
+    log.error(err)
   } else {
     spinner.succeed(chalk.green('download template successfully'))
   }
