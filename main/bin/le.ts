@@ -4,6 +4,7 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
+import * as path from "path";
 
 const pkg = require('../../package.json');
 
@@ -21,8 +22,13 @@ program.on('--help', function () {
 
 let config = [
   {
+    type: 'input',
+    name: 'dirPath',
+    message: `请输入您的初始化项目路径, 不填写默认略过`,
+  },
+  {
     type: 'checkbox',
-    message: '请选择',
+    message: '请选择创建项目类型',
     name: 'select',
     choices: [
       new inquirer.Separator(' = 前台程序 = '),
@@ -71,27 +77,17 @@ let config = [
 ];
 
 if (program.start) {
-  console.log(program.args);
-  inquirer.prompt([{
-    type: 'confirm',
-    name: 'override',
-    message: `没有路径名, 确定项目初始化在当前目录内?`
-  }])
-      .then(answers => {
-        console.log(answers);
-        if (answers.override) return inquirer.prompt(config);
-        return Promise.reject('no')
+  inquirer.prompt(config)
+    .then(data => {
+      log.info('项目选择成功，正在开始给您初始化项目.......');
+      const template = data.select[0];
+      const {dirPath} = data;
+
+      init({
+        template,
+        dirPath,
       })
-      .then(data => {
-        log.info('项目选择成功，正在开始给您初始化项目.......');
-        let template = data.select[0];
-
-        console.log(template);
-
-        // init({
-        //   template
-        // })
-      }).catch(err => log.error(err))
+    });
 } else {
   program.help();
 }
