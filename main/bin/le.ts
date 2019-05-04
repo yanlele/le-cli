@@ -4,6 +4,7 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
+
 const pkg = require('../../package.json');
 
 program
@@ -15,7 +16,7 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  le  --start/-s');
+  log.info('  le  --start/-s  [path]');
 });
 
 let config = [
@@ -70,15 +71,27 @@ let config = [
 ];
 
 if (program.start) {
-  inquirer.prompt(config)
+  console.log(program.args);
+  inquirer.prompt([{
+    type: 'confirm',
+    name: 'override',
+    message: `没有路径名, 确定项目初始化在当前目录内?`
+  }])
+      .then(answers => {
+        console.log(answers);
+        if (answers.override) return inquirer.prompt(config);
+        return Promise.reject('no')
+      })
       .then(data => {
-
         log.info('项目选择成功，正在开始给您初始化项目.......');
         let template = data.select[0];
-        init({
-          template
-        })
-      });
+
+        console.log(template);
+
+        // init({
+        //   template
+        // })
+      }).catch(err => log.error(err))
 } else {
   program.help();
 }
