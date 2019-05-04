@@ -60,11 +60,6 @@ let config = [
       {
         name: 'koa程序+基于TypeScript+MySql',
         value: 'koa-typescript'
-      },
-      new inquirer.Separator(' = java 后台程序 = '),
-      {
-        name: '基础java SSM程序',
-        value: 'java-ssm'
       }
     ],
     validate: function (answer) {
