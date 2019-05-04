@@ -4,7 +4,6 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
-import * as path from "path";
 
 const pkg = require('../../package.json');
 
@@ -73,16 +72,16 @@ let config = [
 
 if (program.start) {
   inquirer.prompt(config)
-    .then(data => {
-      log.info('项目选择成功，正在开始给您初始化项目.......');
-      const template = data.select[0];
-      const {dirPath} = data;
+      .then(data => {
+        log.info('项目选择成功，正在开始给您初始化项目.......');
+        const {dirPath, select} = data;
+        const template = select[0];
 
-      init({
-        template,
-        dirPath,
-      })
-    });
+        init({
+          template,
+          dirPath,
+        })
+      });
 } else {
   program.help();
 }
