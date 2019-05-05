@@ -3,7 +3,7 @@
 /**
  * 输出控制台日志记录
  */
-import * as chalk from 'chalk';
+import chalk from 'chalk';
 
 export enum LogType {
   info = 'info',

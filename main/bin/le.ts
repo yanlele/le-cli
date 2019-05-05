@@ -4,6 +4,9 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
+import * as userHome from 'user-home';
+import * as path from 'path';
+
 const pkg = require('../../package.json');
 
 program
@@ -15,13 +18,18 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  le  --start/-s');
+  log.info('  le  --start/-s  [path]');
 });
 
 let config = [
   {
+    type: 'input',
+    name: 'dirPath',
+    message: `请输入您的初始化项目路径, 不填写默认略过并取当前路径为默认初始化项目路径:`,
+  },
+  {
     type: 'checkbox',
-    message: '请选择',
+    message: '请选择创建项目类型',
     name: 'select',
     choices: [
       new inquirer.Separator(' = 前台程序 = '),
@@ -53,11 +61,6 @@ let config = [
       {
         name: 'koa程序+基于TypeScript+MySql',
         value: 'koa-typescript'
-      },
-      new inquirer.Separator(' = java 后台程序 = '),
-      {
-        name: '基础java SSM程序',
-        value: 'java-ssm'
       }
     ],
     validate: function (answer) {
@@ -72,17 +75,16 @@ let config = [
 if (program.start) {
   inquirer.prompt(config)
       .then(data => {
-
         log.info('项目选择成功，正在开始给您初始化项目.......');
-        let template = data.select[0];
+        const {dirPath, select} = data;
+        const template = select[0];
         init({
-          template
+          template,
+          dirPath,
         })
       });
 } else {
   program.help();
 }
-
-
 
 

@@ -1,6 +1,8 @@
 # le-cli
 前端工程化：创建项目，自动开发生成脚手架、webpack配置文件；开发完成后构建项目，进行压缩合并，并行生产环境和开发环境。
 
+所有模板项目文件都迁移到[https://github.com/cli-template-build](https://github.com/cli-template-build) 做集体维护
+
 
 ## 安装
 `npm install le-cli -g`
@@ -21,7 +23,14 @@
 - koa程序+基于TypeScript+MySql
 - 基于TypeScript+react+saga项目
 
+
 ## 版本升级说明
+- 0.2.0
+    - 重要更新 
+    - 所有模板项目文件都迁移到[https://github.com/cli-template-build](https://github.com/cli-template-build) 做集体维护
+    - 此初始化构建项目和模板文件分离， 只做一个初始化构建工具单独维护和发版
+    
+
 - 0.1.10
     - 项目构建改造成为了 TS 构建工具
 
