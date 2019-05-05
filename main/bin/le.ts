@@ -4,6 +4,8 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
+import * as userHome from 'user-home';
+import * as path from 'path';
 
 const pkg = require('../../package.json');
 
@@ -23,7 +25,7 @@ let config = [
   {
     type: 'input',
     name: 'dirPath',
-    message: `请输入您的初始化项目路径, 不填写默认略过`,
+    message: `请输入您的初始化项目路径, 不填写默认略过并取当前路径为默认初始化项目路径:`,
   },
   {
     type: 'checkbox',
@@ -76,7 +78,6 @@ if (program.start) {
         log.info('项目选择成功，正在开始给您初始化项目.......');
         const {dirPath, select} = data;
         const template = select[0];
-
         init({
           template,
           dirPath,
@@ -85,7 +86,5 @@ if (program.start) {
 } else {
   program.help();
 }
-
-
 
 
