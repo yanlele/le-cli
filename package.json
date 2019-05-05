@@ -6,6 +6,7 @@
   "directories": {
     "lib": "lib"
   },
+  "repository": "https://github.com/yanlele/le-cli",
   "scripts": {
     "prepare": "npm run build",
     "type-check": "tsc",
@@ -13,7 +14,7 @@
     "build": "tsc"
   },
   "bin": {
-    "le": "./main/bin/le.js"
+    "tpm": "./main/bin/le.js"
   },
   "config": {
     "commitizen": {

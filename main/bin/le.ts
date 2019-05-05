@@ -18,7 +18,7 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  le  --start/-s  [path]');
+  log.info('  tpm  --start/-s  [path]');
 });
 
 let config = [

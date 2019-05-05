@@ -8,9 +8,9 @@
 `npm install le-cli -g`
 
 ## 使用
-直接cd 到自己的文件目录（需要自己创建一个文件夹， 程序在这里不会给你创建文件夹的）：
-没有动图， 参考下面的命令行执行流程：
-`mkdir test` --> `cd test` --> `le -s`                      
+在您需要构建项目的目录， 直接使用命令行 **`tpm -s`**                       
+查看帮助 **`tpm`或者`tpm --help`**                    
+                    
 ![01](./static/img/01.png)
 
 
@@ -41,4 +41,4 @@
     - TypeScript-multipage 添加了handlebars-loader
 
 - 0.0.8                                                                 
-    添加基于next 的react 服务端渲染项目模板。 内置redux+antd， 作为前台程序使用。
+    - 添加基于next 的react 服务端渲染项目模板。 内置redux+antd， 作为前台程序使用。
