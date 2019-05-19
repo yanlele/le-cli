@@ -1,6 +1,6 @@
 {
   "name": "le-cli",
-  "version": "0.2.0",
+  "version": "0.2.01",
   "description": "前端项目构建实践",
   "main": "./main/bin/le.js",
   "directories": {
@@ -30,6 +30,7 @@
     "fs-extra": "^4.0.2",
     "inquirer": "^6.2.0",
     "ora": "^3.4.0",
+    "request": "^2.88.0",
     "typescript": "^3.4.5",
     "user-home": "^2.0.0"
   },
