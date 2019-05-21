@@ -4,10 +4,14 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
-import * as userHome from 'user-home';
-import * as path from 'path';
+import * as ora from 'ora';
+
+import githubTemplateRequest from '../lib/handleRequest';
 
 const pkg = require('../../package.json');
+
+
+const spinner = ora('downloading template...');
 
 program
     .usage('--start')
@@ -21,7 +25,7 @@ program.on('--help', function () {
   log.info('  tpm  --start/-s  [path]');
 });
 
-let config = [
+const defaultConfig = [
   {
     type: 'input',
     name: 'dirPath',
@@ -72,7 +76,7 @@ let config = [
   }
 ];
 
-if (program.start) {
+const initFunction = (config = defaultConfig) => {
   inquirer.prompt(config)
       .then(data => {
         log.info('项目选择成功，正在开始给您初始化项目.......');
@@ -83,8 +87,25 @@ if (program.start) {
           dirPath,
         })
       });
+};
+
+if (program.start) {
+  spinner.start();
+  githubTemplateRequest()
+      .then((res: any) => {
+        // initFunction([res])
+
+      })
+      .catch(err => {
+        spinner.fail('get template fail');
+        log.info('start local template');
+        initFunction();
+      });
+
 } else {
   program.help();
 }
+
+
 
 
