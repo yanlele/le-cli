@@ -6,7 +6,7 @@ import init from '../lib/console/init';
 import * as program from 'commander';
 import * as ora from 'ora';
 
-import githubTemplateRequest from '../lib/handleRequest';
+import githubTemplateRequest, {handleResponseSource} from '../lib/handleRequest';
 
 const pkg = require('../../package.json');
 
@@ -76,7 +76,7 @@ const defaultConfig = [
   }
 ];
 
-const initFunction = (config = defaultConfig) => {
+const initFunction = (config: any[] = defaultConfig) => {
   inquirer.prompt(config)
       .then(data => {
         log.info('项目选择成功，正在开始给您初始化项目.......');
@@ -92,8 +92,8 @@ const initFunction = (config = defaultConfig) => {
 if (program.start) {
   spinner.start();
   githubTemplateRequest()
-      .then((res: any) => {
-        // initFunction([res])
+      .then((res: any[]) => {
+        initFunction(handleResponseSource(res))
 
       })
       .catch(err => {

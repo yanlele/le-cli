@@ -16,11 +16,11 @@ const handleRequest = ()=> {
   })
 };
 
-const handleResponseSource = (res: any[]) => {
+export const handleResponseSource = (res: any[]) => {
   return res.map(item => ({
-    name: item.name,
+    value: item.name,
     url: item.html_url,
-    description: item.description,
+    name: item.description,
   }))
 };
 
