@@ -24,7 +24,7 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  tpm  --start/-s ');
+  log.info('  tpm-cli  --start/-s ');
 });
 
 const defaultConfig = [
