@@ -22,6 +22,7 @@
 - koa程序+MySql连接数据库
 - koa程序+基于TypeScript+MySql
 - 基于TypeScript+react+saga项目
+- 小程序 - 基于tina的小程序构建项目
 
 
 ## 版本升级说明
