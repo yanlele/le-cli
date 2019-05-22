@@ -13,7 +13,7 @@ import * as ora from 'ora';
 const pkg = require('../../package.json');
 
 
-const spinner = ora('downloading template...');
+const spinner = ora('Downloading template...');
 
 program
     .usage('--start')
@@ -96,16 +96,17 @@ const initFunction = (config: any[] = defaultConfig) => {
 };
 
 if (program.start) {
+  log.info('Get template form remote ......');
   spinner.start();
   githubTemplateRequest()
       .then((res: any[]) => {
-        spinner.succeed(chalk.green('download template successfully'));
+        spinner.succeed(chalk.green('Download template successfully'));
         const choicesList: { name: string, value: string }[] = handleResponseSource(res);
         initFunction(configHandler(choicesList))
       })
       .catch(err => {
-        spinner.warn('get template fail');
-        log.info('start local template');
+        spinner.warn('Get template fail');
+        log.info('Start local template config......');
         initFunction();
       });
 } else {
