@@ -4,10 +4,11 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
-import * as ora from 'ora';
-
 import githubTemplateRequest, {configHandler, handleResponseSource} from '../lib/handleRequest';
 import chalk from "chalk";
+import * as ora from 'ora';
+
+
 
 const pkg = require('../../package.json');
 
@@ -103,7 +104,7 @@ if (program.start) {
         initFunction(configHandler(choicesList))
       })
       .catch(err => {
-        spinner.fail('get template fail');
+        spinner.warn('get template fail');
         log.info('start local template');
         initFunction();
       });

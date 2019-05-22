@@ -6,7 +6,7 @@ const spinner = ora('downloading template...');
 
 spinner.start();
 handleRequest().then((res: any[])=> {
-  spinner.succeed('success');
+  spinner.warn('success');
   const choicesList: { name: string, value: string }[] = handleResponseSource(res);
   console.log(`<${'='.repeat(100)}>`);
   console.log(choicesList);
