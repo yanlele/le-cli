@@ -6,7 +6,8 @@ import init from '../lib/console/init';
 import * as program from 'commander';
 import * as ora from 'ora';
 
-import githubTemplateRequest, {handleResponseSource} from '../lib/handleRequest';
+import githubTemplateRequest, {configHandler, handleResponseSource} from '../lib/handleRequest';
+import chalk from "chalk";
 
 const pkg = require('../../package.json');
 
@@ -22,7 +23,7 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  tpm  --start/-s  [path]');
+  log.info('  tpm  --start/-s ');
 });
 
 const defaultConfig = [
@@ -56,6 +57,10 @@ const defaultConfig = [
       {
         name: '基于TypeScript+react项目',
         value: 'tsx-app'
+      },
+      {
+        name: '小程序 - 基于tina的小程序框架',
+        value: 'mini-program'
       },
       new inquirer.Separator(' = node 后台程序 ='),
       {
@@ -93,15 +98,15 @@ if (program.start) {
   spinner.start();
   githubTemplateRequest()
       .then((res: any[]) => {
-        initFunction(handleResponseSource(res))
-
+        spinner.succeed(chalk.green('download template successfully'));
+        const choicesList: { name: string, value: string }[] = handleResponseSource(res);
+        initFunction(configHandler(choicesList))
       })
       .catch(err => {
         spinner.fail('get template fail');
         log.info('start local template');
         initFunction();
       });
-
 } else {
   program.help();
 }
