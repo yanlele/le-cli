@@ -4,10 +4,16 @@ import * as inquirer from 'inquirer';
 import log from '../lib/log';
 import init from '../lib/console/init';
 import * as program from 'commander';
-import * as userHome from 'user-home';
-import * as path from 'path';
+import githubTemplateRequest, {configHandler, handleResponseSource} from '../lib/handleRequest';
+import chalk from "chalk";
+import * as ora from 'ora';
+
+
 
 const pkg = require('../../package.json');
+
+
+const spinner = ora('Downloading template...');
 
 program
     .usage('--start')
@@ -18,10 +24,10 @@ program
 program.on('--help', function () {
   log.info('  示例(Examples):');
   log.info();
-  log.info('  tpm  --start/-s  [path]');
+  log.info('  tpm  --start/-s ');
 });
 
-let config = [
+const defaultConfig = [
   {
     type: 'input',
     name: 'dirPath',
@@ -53,6 +59,10 @@ let config = [
         name: '基于TypeScript+react项目',
         value: 'tsx-app'
       },
+      {
+        name: '小程序 - 基于tina的小程序框架',
+        value: 'mini-program'
+      },
       new inquirer.Separator(' = node 后台程序 ='),
       {
         name: 'koa程序+MySql连接数据库',
@@ -72,7 +82,7 @@ let config = [
   }
 ];
 
-if (program.start) {
+const initFunction = (config: any[] = defaultConfig) => {
   inquirer.prompt(config)
       .then(data => {
         log.info('项目选择成功，正在开始给您初始化项目.......');
@@ -83,8 +93,26 @@ if (program.start) {
           dirPath,
         })
       });
+};
+
+if (program.start) {
+  log.info('Get template form remote ......');
+  spinner.start();
+  githubTemplateRequest()
+      .then((res: any[]) => {
+        spinner.succeed(chalk.green('Download template successfully'));
+        const choicesList: { name: string, value: string }[] = handleResponseSource(res);
+        initFunction(configHandler(choicesList))
+      })
+      .catch(err => {
+        spinner.warn('Get template fail');
+        log.info('Start local template config......');
+        initFunction();
+      });
 } else {
   program.help();
 }
+
+
 
 

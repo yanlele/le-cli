@@ -8,8 +8,8 @@
 `npm install le-cli -g`
 
 ## 使用
-在您需要构建项目的目录， 直接使用命令行 **`tpm -s`**                       
-查看帮助 **`tpm`或者`tpm --help`**                    
+在您需要构建项目的目录， 直接使用命令行 **`tpm -s`**                                       
+查看帮助 **`tpm`或者`tpm --help`**                                    
                     
 ![01](./static/img/01.png)
 
@@ -22,9 +22,16 @@
 - koa程序+MySql连接数据库
 - koa程序+基于TypeScript+MySql
 - 基于TypeScript+react+saga项目
+- 小程序 - 基于tina的小程序构建项目
 
 
 ## 版本升级说明
+- 0.2.01
+    - 添加远程更新模板数据 实现动态加载
+    - 如果远程获取失败， 走本地数据下载项目
+    - 修改日志以及loading 
+
+
 - 0.2.0
     - 重要更新 
     - 所有模板项目文件都迁移到[https://github.com/cli-template-build](https://github.com/cli-template-build) 做集体维护
