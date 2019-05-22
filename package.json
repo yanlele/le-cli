@@ -1,6 +1,6 @@
 {
   "name": "le-cli",
-  "version": "0.2.3",
+  "version": "0.2.4",
   "description": "前端项目构建实践",
   "main": "./main/bin/le.js",
   "directories": {
@@ -27,7 +27,6 @@
     "chalk": "^2.1.0",
     "commander": "^2.11.0",
     "download-git-repo": "^1.1.0",
-    "fs-extra": "^4.0.2",
     "inquirer": "^6.2.0",
     "ora": "^3.4.0",
     "request": "^2.88.0",
