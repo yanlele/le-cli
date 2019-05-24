@@ -21,7 +21,9 @@ export default (program) => {
     } else {
       spinner.succeed(chalk.green('download template successfully'));
       fs.copySync(templateDownLoadPath, path.resolve(process.cwd(), dirPath));
-      log.success('模板解析成功， 初始化成功');
+      log.success('模板解析成功， 初始化完成');
+      fs.removeSync(templateDownLoadPath);
+      log.success('缓存清理成功');
     }
   });
 };

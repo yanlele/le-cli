@@ -96,11 +96,11 @@ const initFunction = (config: any[] = defaultConfig) => {
 };
 
 if (program.start) {
-  log.info('Get template form remote ......');
+  log.info('Get template information form remote ......');
   spinner.start();
   githubTemplateRequest()
       .then((res: any[]) => {
-        spinner.succeed(chalk.green('Download template successfully'));
+        spinner.succeed(chalk.green('Get template information success'));
         const choicesList: { name: string, value: string }[] = handleResponseSource(res);
         initFunction(configHandler(choicesList))
       })
